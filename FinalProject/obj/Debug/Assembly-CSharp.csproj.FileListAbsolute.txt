@@ -1,4 +1,3 @@
-C:\Users\Alisa\Documents\FinalProject\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Alisa\Documents\FinalProject\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\Alisa\Documents\FinalProject\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\Alisa\Documents\FinalProject\Temp\bin\Debug\nunit.framework.dll
@@ -34,5 +33,6 @@ C:\Users\Alisa\Documents\FinalProject\Temp\bin\Debug\UnityEngine.UIAutomation.xm
 C:\Users\Alisa\Documents\FinalProject\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
 C:\Users\Alisa\Documents\FinalProject\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\Alisa\Documents\FinalProject\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+C:\Users\Alisa\Documents\FinalProject\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Alisa\Documents\FinalProject\obj\Debug\Assembly-CSharp.dll
 C:\Users\Alisa\Documents\FinalProject\obj\Debug\Assembly-CSharp.pdb

@@ -233,6 +233,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   jumpForce: 30
   fireBall: {fileID: 1070042358406304, guid: 756a2fe43b0fb5f45bac1c71cc1fbf85, type: 2}
+  directionDwarf: 1
 --- !u!114 &114293515447073558
 MonoBehaviour:
   m_ObjectHideFlags: 1
