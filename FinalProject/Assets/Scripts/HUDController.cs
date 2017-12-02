@@ -212,8 +212,7 @@ public class HUDController : MonoBehaviour
 
 	public void gameOver()
 	{
-		//change the boolean value
-		isgameOvr = true;
+		
 
 		//reset the hasMineral boolean value to false 
 		Player.Instance.HasMineral = false;
@@ -254,7 +253,7 @@ public class HUDController : MonoBehaviour
 		//in UI in Non-active mode
 		//Non-active means that this score label game object 
 		//is disabled and it is not appeared in the scene
-		timerLabel.gameObject.SetActive (false);
+		timerLabel.gameObject.SetActive (true);
 
 
 
@@ -300,23 +299,26 @@ public class HUDController : MonoBehaviour
 	//Update the following labels 
 	public void EndUI()
 	{
+		//change the boolean value
+		isgameOvr = true;
 
 		//updating the score label
 		highScoreLabel.text = "Highest Score: " +Player.Instance.HighScore;
 
 
-			//if the player has won then store the lowest time label onto the player instance lowest time variable
-			float endLowTime = Player.Instance.LowestTime;
+		//pause ();
+			//if the player lost the timmer will be stored for displaying purposes
+			float endTime = Player.Instance.Timmer;
 
 
 			//Parse the string into a more friendly display string that is more readle to the user
 			//into a more disirable view.
-			string minutes = ((int)endLowTime / 60).ToString ();
-			string seconds = (endLowTime % 60).ToString ("f2");
+			string minutes = ((int)endTime / 60).ToString ();
+			string seconds = (endTime % 60).ToString ("f2");
 
 
-			//store the lowest time into a lowest time label in the UI.
-			lowestTimeLabel.text = "Lowest Time: " + minutes + ":" + seconds;
+			//store the time into a time label in the UI.
+			timerLabel.text = "Time: " + minutes + ":" + seconds;
 
 
 	}
@@ -341,7 +343,7 @@ public class HUDController : MonoBehaviour
 		//in UI in Non-active mode
 		//Non-active means that this score label game object 
 		//is disabled and it is not appeared in the scene
-		timerLabel.gameObject.SetActive (false);
+		timerLabel.gameObject.SetActive (true);
 
 		//Setting game over label in Heads Up Display
 		//in UI in active mode
@@ -401,12 +403,14 @@ public class HUDController : MonoBehaviour
 			timerLabel.text = "" + Player.Instance.Timmer + minutes + ":" + seconds;
 		}*/
 
-
-
-
-
-
 	}
+
+	public void WinUI()
+	{
+		isgameOvr = true;
+	}
+
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -488,26 +492,37 @@ public class HUDController : MonoBehaviour
 			t = Time.time - startTime;
 		}
 		//checking if game is over
-		if (isgameOvr) 
-		{
-			//if itis true and game is over then
-			//pause the time
-			//call pause function
-			pause (t);
 
 			//check to see if the player has won
 			if (CountUp && Player.Instance.HasWon) 
 			{
+				pause (t);
 				//if it is true and the player has won then update
 				//the lowest time variable to the t variable
 				Player.Instance.LowestTime = t;
+				Player.Instance.YourTime = t;
+				//reset hasWon variable
+				Player.Instance.HasWon = false;
+			}
+			//check to see if the player has won
+			if (!CountUp && Player.Instance.HasWon) 
+			{
+				pause (t);
+				//if it is true and the player has won then update
+				//the lowest time variable to the t variable
+				//float previousT = Player.Instance.LowestTime;
 
+				//Then store new t variable
+				//Player.Instance.LowestTime = t;
+
+				float TimeCompleted = CountDown - t;
+				Player.Instance.LowestTimeTwo = TimeCompleted;
+				Player.Instance.YourTime = TimeCompleted;
 				//reset hasWon variable
 				Player.Instance.HasWon = false;
 			}
 			//reset the isgameOver boolean variale
-				isgameOvr = false;
-			}
+			
 
 			//This detects if the time is paused
 			if (pauseTime > 0) 

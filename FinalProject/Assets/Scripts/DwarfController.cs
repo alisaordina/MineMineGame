@@ -60,6 +60,8 @@ public class DwarfController : MonoBehaviour
 	//use the physics of this game object in the scene
 	private Rigidbody2D _rigidBody;
 
+	private CapsuleCollider2D _capsCol;
+
 	//Declaire private variable
 	//This variable is assigned to a designated boolean
 	//varibale in order to work as a flag and to check
@@ -75,6 +77,7 @@ public class DwarfController : MonoBehaviour
 	{
 
 
+		_capsCol = gameObject.GetComponent<CapsuleCollider2D> ();
 		//Here the set up of the Rigidbody2D component. 
 		//This Rigidbody2D Component is accessed from this specific game object
 		//which the script is attached to the Dwarf game object in the scene.
@@ -102,6 +105,7 @@ public class DwarfController : MonoBehaviour
 		//to the spawn poing traform position. This enables for Dwarf game object to start atthat specific point
 		//its (initial position).
 		gameObject.transform.position = spawnPoint.position;
+
 		Player.Instance.HasMineral = false;
 
 	}
@@ -154,12 +158,25 @@ public class DwarfController : MonoBehaviour
 				//If this condition is true then set Cwarl bool parameter of Animator to true in
 				//order to trigger the crawl animation.
 				_animator.SetBool ("Crawl", true);
-			} 
+
+				_capsCol.size = new Vector2(1.03f, 1);
+
+				_capsCol.offset = new Vector2(0, -0.25f);
+
+
+			}
+
+
 			else 
 			{
 				//When the condition is false then reset the Crawl paramenter bool to false.
 				//In order to stop the crawl animation
 				_animator.SetBool ("Crawl", false);
+
+				_capsCol.size = new Vector2(1.03f, 1.49f);
+
+				_capsCol.offset = new Vector2(0, 0);
+
 			}
 
 			//If the fire positive key is getting pressed that means above zero then invoke this condition
@@ -217,7 +234,7 @@ public class DwarfController : MonoBehaviour
 				//setting up the direction of the Dwarf game object's to negative 1
 				directionDwarf = -1;
 			} 
-			else 
+			else if (_rigidBody.velocity.x > 0) 
 			{
 				//if the Dwarf game object heading direction is posive then leave the sprite direction as it is.
 				//do not flip it horizontally

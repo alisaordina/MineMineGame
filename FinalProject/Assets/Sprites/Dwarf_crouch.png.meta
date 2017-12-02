@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 87668b302218676419c039c6cec8126e
-timeCreated: 1510804301
+timeCreated: 1511759632
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -87,28 +87,61 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 212
+        y: 214
         width: 125
-        height: 125
+        height: 149
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 2}
+      outline:
+      - - {x: -22.5, y: 50.5}
+        - {x: -62.5, y: 42.5}
+        - {x: -62.5, y: -74.5}
+        - {x: 41.5, y: -74.5}
+        - {x: 62.5, y: -32.5}
+        - {x: 62.5, y: 50.5}
+      physicsShape:
+      - - {x: 38.755775, y: 55.430176}
+        - {x: -24.80231, y: 56.104614}
+        - {x: -50.5, y: 39.5}
+        - {x: -57.77904, y: -17.5}
+        - {x: -62.5, y: -61.5}
+        - {x: 30.383667, y: -58.127884}
+        - {x: 47.081352, y: -27.5}
+        - {x: 55.081345, y: -5.174408}
+        - {x: 57.779037, y: 51.45346}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Dwarf_crouch_1
       rect:
         serializedVersion: 2
         x: 152
-        y: 200
+        y: 203
         width: 127
-        height: 128
+        height: 149
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -63.5, y: 52.5}
+        - {x: -63.5, y: -74.5}
+        - {x: 27.5, y: -74.5}
+        - {x: 43.5, y: -62.5}
+        - {x: 63.5, y: -2.5}
+        - {x: 63.5, y: 52.5}
+      physicsShape:
+      - - {x: 38.15117, y: 56.58136}
+        - {x: -14.081345, y: 59.95346}
+        - {x: -51.430206, y: 42.976746}
+        - {x: -59.5, y: 6}
+        - {x: -49.5, y: -8}
+        - {x: -62.5, y: -43}
+        - {x: -62.5, y: -57.255768}
+        - {x: 12.360397, y: -55.90692}
+        - {x: 40.244034, y: -40.51172}
+        - {x: 45.964996, y: -20.697693}
+        - {x: 58.25351, y: 27.501038}
+        - {x: 63.5, y: 48}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Dwarf_crouch_2
@@ -117,26 +150,60 @@ TextureImporter:
         x: 294
         y: 200
         width: 125
-        height: 124
+        height: 149
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 2}
+      outline:
+      - - {x: 62.5, y: 49.5}
+        - {x: 55.5, y: 51.5}
+        - {x: -25.5, y: 51.5}
+        - {x: -51.5, y: 37.5}
+        - {x: -62.5, y: -30.5}
+        - {x: -62.5, y: -74.5}
+        - {x: 27.5, y: -74.5}
+        - {x: 35.5, y: -68.5}
+        - {x: 49.5, y: -42.5}
+        - {x: 62.5, y: -12.5}
+      physicsShape:
+      - - {x: -21.755768, y: 51.20923}
+        - {x: -48.5, y: 40}
+        - {x: -62.5, y: -25}
+        - {x: -62.5, y: -53.90692}
+        - {x: -16.46997, y: -56.29776}
+        - {x: 32.40692, y: -51.88365}
+        - {x: 55.08136, y: -10.674423}
+        - {x: 62.5, y: 51.279053}
+        - {x: 41.779053, y: 57.95346}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Dwarf_crouch_3
       rect:
         serializedVersion: 2
-        x: 12
-        y: 69
+        x: 7
+        y: 74
         width: 127
-        height: 131
+        height: 141
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 57.5, y: 59}
+        - {x: -20.5, y: 59}
+        - {x: -63.5, y: 48}
+        - {x: -63.5, y: -69}
+        - {x: 28.5, y: -69}
+        - {x: 63.5, y: -29}
+        - {x: 63.5, y: 54}
+      physicsShape:
+      - - {x: 43.5, y: 63}
+        - {x: -28.732506, y: 54.906937}
+        - {x: -48.337128, y: 43.581345}
+        - {x: -60.47673, y: -55.581352}
+        - {x: 34.15116, y: -56.255775}
+        - {x: 56.755768, y: -2.6744232}
+        - {x: 62.151154, y: 43.860382}
+        - {x: 52.43019, y: 51.232513}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Dwarf_crouch_4
@@ -145,12 +212,29 @@ TextureImporter:
         x: 160
         y: 55
         width: 125
-        height: 125
+        height: 147
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 2, z: 0, w: 4}
+      outline:
+      - - {x: -62.5, y: -62.5}
+        - {x: 46.5, y: -62.5}
+        - {x: 62.5, y: -25.5}
+        - {x: 62.5, y: 62.5}
+        - {x: -29.5, y: 62.5}
+        - {x: -62.5, y: 55.5}
+      physicsShape:
+      - - {x: -10.5, y: 62.5}
+        - {x: -47.5, y: 39.5}
+        - {x: -51.5, y: 0.5}
+        - {x: -39.5, y: -10.5}
+        - {x: -56.5, y: -28.5}
+        - {x: -62.5, y: -36.5}
+        - {x: -62.5, y: -57.10462}
+        - {x: 40.104614, y: -56.4302}
+        - {x: 49.685974, y: -44.54654}
+        - {x: 61.65561, y: 32.908768}
+        - {x: 61.151154, y: 53.7325}
       tessellationDetail: 0
     outline: []
     physicsShape: []

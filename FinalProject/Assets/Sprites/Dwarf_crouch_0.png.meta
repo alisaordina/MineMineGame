@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ea6a363e5b20cdc4abd62978abac961f
-timeCreated: 1510804717
+timeCreated: 1511759848
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -82,15 +82,30 @@ TextureImporter:
       name: Dwarf_crouch_0_0
       rect:
         serializedVersion: 2
-        x: 193
-        y: 5
-        width: 125
-        height: 124
+        x: 194
+        y: 10
+        width: 124
+        height: 149
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -20.56836, y: 52.54696}
+        - {x: -42.30316, y: 38.072495}
+        - {x: -50, y: 5}
+        - {x: -49, y: 0}
+        - {x: -39, y: -8}
+        - {x: -36, y: -9}
+        - {x: -32, y: -9}
+        - {x: -34, y: -9}
+        - {x: -45, y: -19}
+        - {x: -62, y: -35}
+        - {x: -62, y: -56}
+        - {x: 29.914368, y: -56}
+        - {x: 36.57309, y: -36.711002}
+        - {x: 51.64087, y: -15.790764}
+        - {x: 62, y: 56}
       tessellationDetail: 0
     outline: []
     physicsShape: []

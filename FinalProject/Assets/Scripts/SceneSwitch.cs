@@ -19,7 +19,7 @@ using UnityEngine.SceneManagement;
 public class SceneSwitch : MonoBehaviour 
 {
 
-	static SceneSwitch Instance;
+
 	//setting up the int level variable
 	 static int level;
 
@@ -32,16 +32,19 @@ public class SceneSwitch : MonoBehaviour
 		//check to see if the object tag is equals to Player, the Dwarf game object's tag
 		if (other.gameObject.tag.Equals ("Player")) 
 		{
-			//Check to see if the game'sobjection has been completed 
+			//Check to see if the game's objection has been completed 
 			//Check to see if the Dwarf character has a mineral
 			//which is boolean to see if its true,to see if
 			//Dwarf has aquired the rare mineral.
 			if (Player.Instance.HasMineral) 
 			{
 				//set boolean to won variable to true
-				//to storethe lowest time 
+				//to store the lowest time 
 				Player.Instance.HasWon = true;
+
+				//reset the hasMineral boolean to false
 				Player.Instance.HasMineral = false;
+
 				//If all these conditions are true
 				//Then invoke StartScene function
 				StartScene ();
@@ -53,29 +56,37 @@ public class SceneSwitch : MonoBehaviour
 	//This function will set and switch the scene to the indicated/specified scene
 	public void StartScene()
 	{
+
+		//Get the integer of the index of the current scene
+		//andstore it into a level variable
 		level = SceneManager.GetActiveScene().buildIndex;
 
+		//increase the currentlevel index by one.
+		//This is in order to switch to the next index numberforthe next scene
 		level++;
-		if (level > 3) 
+
+		//Check to see if the index boundary
+		//If for example it is index 4, invoke this condition
+		if (level > 4) 
 		{
-			
+			//If it is true, and the index value is greater then 3
+			//which means it is at the last index number. Then reset the index value to zero
+			//To start from the begining of the scene's index number.
 			level = 0;
+			//Load the start scene in at index number 0.
 			SceneManager.LoadScene (level);
-			level++;
 		} 
 		else 
 		{
 			//Then the scene Management will load the new scene either
 			//with id that is related to the indicated scene, or by
-			//the scene name which isscripted below. This specified scene 
+			//the scene name. This specified scene's index number
 			//will be loaded when this function is executed.
 			//There can be aditional parameter that allows to control the
 			//way to load the scene in a specific way. By default here, it is unloading
-			//one scene and loading another new scene by its name on top it, of the previous scene.
+			//one scene and loading another new scene by its index number on top it, of the previous scene.
 			SceneManager.LoadScene (level);
-			//level++;
-			//Reseting the flag HasMineral boolean to false.
-			Player.Instance.HasMineral = false;
+
 		}
 
 
