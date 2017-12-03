@@ -212,7 +212,8 @@ public class HUDController : MonoBehaviour
 
 	public void gameOver()
 	{
-		
+
+
 
 		//reset the hasMineral boolean value to false 
 		Player.Instance.HasMineral = false;
@@ -363,6 +364,24 @@ public class HUDController : MonoBehaviour
 		//is enabled and is appeared in the scene.
 		lowestTimeLabel.gameObject.SetActive (true);
 
+		//reset the hasMineral boolean value to false 
+		Player.Instance.HasMineral = false;
+
+		//If the tag is equals to the player tag then access the tag's game object's
+		//DwarfController script
+		DwarfController Dc = dwarf.gameObject.GetComponent<DwarfController> ();
+
+
+		//Check if the scrpt is assigned to this game object 
+		//if it does contain itandit is not null
+		if (Dc!= null) 
+		{
+
+
+			//invoke form Dwarf's controller script Death method/function
+			Dc.Hurt();
+		}
+
 		//Call EndUI function
 		EndUI();
 
@@ -492,7 +511,16 @@ public class HUDController : MonoBehaviour
 			t = Time.time - startTime;
 		}
 		//checking if game is over
-
+		if (CountUp && isgameOvr) 
+		{
+			pause (t);
+			//if it is true and the player has won then update
+			//the lowest time variable to the t variable
+			//Player.Instance.LowestTime = t;
+			//Player.Instance.YourTime = t;
+			//reset hasWon variable
+			Player.Instance.HasWon = false;
+		}
 			//check to see if the player has won
 			if (CountUp && Player.Instance.HasWon) 
 			{
@@ -521,6 +549,7 @@ public class HUDController : MonoBehaviour
 				//reset hasWon variable
 				Player.Instance.HasWon = false;
 			}
+
 			//reset the isgameOver boolean variale
 			
 
@@ -547,7 +576,45 @@ public class HUDController : MonoBehaviour
 			//update timmer label in UI
 				timerLabel.text = minutes + ":" + seconds;
 			}
+		if (!CountUp && t <= 0) 
+		{
+
+			DeadGameOver ();
+			//Parse the string into a more friendly display string that is more readle to the user
+			//into a more disirable view.
+
+
+			string minutes = ((int)Player.Instance.LowestTimeTwo / 60).ToString ();
+			string seconds = (Player.Instance.LowestTimeTwo % 60).ToString ("f2");
+
+			lowestTimeLabel.text = "Best Time: " +  minutes + ":" + seconds;
+			/*update player intsance timmer variable
+			Player.Instance.Timmer = t;
+			//update timmer label in UI
+
+			timerLabel.text = minutes + ":" + seconds;*/
 		}
+		if (CountUp && t >= 30) 
+		{
+			
+			//pause (t);
+
+			DeadGameOver ();
+			//Parse the string into a more friendly display string that is more readle to the user
+			//into a more disirable view.
+
+
+			string minutes = ((int)Player.Instance.LowestTimeTwo / 60).ToString ();
+			string seconds = (Player.Instance.LowestTimeTwo % 60).ToString ("f2");
+
+			lowestTimeLabel.text = "Best Time: " +  minutes + ":" + seconds;
+			/*update player intsance timmer variable
+			Player.Instance.Timmer = t;
+			//update timmer label in UI
+
+			timerLabel.text = minutes + ":" + seconds;*/
+		}
+	}
 
 
 	

@@ -68,6 +68,12 @@ public class DwarfController : MonoBehaviour
 	//if this flag is true in order to trigger the appropriate functions when it is approriate.
 	private bool _dead = false;
 
+	//Declaire private variable
+	//This variable is assigned to a designated boolean
+	//varibale in order to work as a flag and to check
+	//if this flag is true in order to trigger the appropriate functions when it is approriate.
+	private bool _hurt = false;
+
 	//Declaire private variable.
 	//This variable is assigned to a designated game object that is called ShoteOut
 	private GameObject ShoteOut = null;
@@ -117,7 +123,7 @@ public class DwarfController : MonoBehaviour
 	{
 
 		//Checks if the boolean flag Dead is true
-		if (!_dead) 
+		if (!_dead || !_hurt) 
 		{
 
 			//float jump = Input.GetAxis ("Jump");
@@ -314,6 +320,17 @@ public class DwarfController : MonoBehaviour
 
 	}
 
+	public void Hurt()
+	{
+
+		//set the boolean flag _dead to true
+		_hurt = true;
+
+		//set animator's boolean paracmeter to true in order to invoke the Dwarf's death animation
+		_animator.SetBool ("Hurt", true);
+
+
+	}
 	//This is return the direction of theDwarf game object
 	public int DwarfDirection()
 	{

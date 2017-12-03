@@ -1,0 +1,316 @@
+fileFormatVersion: 2
+guid: 457aa31599cc54d45811880bd7f9f74f
+timeCreated: 1512274363
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Dwarf_New_Crouch_0
+    21300002: Dwarf_New_Crouch_1
+    21300004: Dwarf_New_Crouch_2
+    21300006: Dwarf_New_Crouch_3
+    21300008: Dwarf_New_Crouch_4
+    21300010: Dwarf_New_Crouch_5
+    21300012: Dwarf_New_Crouch_6
+    21300014: Dwarf_New_Crouch_7
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dwarf_New_Crouch_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 334
+        width: 125
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -11.5, y: 50.5}
+        - {x: -45.07292, y: 27.576202}
+        - {x: -45.665466, y: -22.207855}
+        - {x: -59.081253, y: -45.492645}
+        - {x: -62.5, y: -71.74835}
+        - {x: -35.488457, y: -70.61511}
+        - {x: -10.856407, y: -70.95447}
+        - {x: 10.315727, y: -69.76337}
+        - {x: 33.41063, y: -70.83115}
+        - {x: 35.207092, y: -48.7529}
+        - {x: 56.0795, y: -18.334442}
+        - {x: 61.582794, y: 37.658997}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dwarf_New_Crouch_1
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 329
+        width: 125
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 52.5, y: 44.5}
+        - {x: 20.5, y: 49.91394}
+        - {x: -18.32785, y: 53.582764}
+        - {x: -52.410645, y: 28.576202}
+        - {x: -56.07434, y: -23.008636}
+        - {x: -41.13553, y: -24.61621}
+        - {x: -61.310333, y: -50.306244}
+        - {x: -62.5, y: -74.5}
+        - {x: -15.229706, y: -67.16229}
+        - {x: 13.245087, y: -69.91391}
+        - {x: 31.869263, y: -52.20697}
+        - {x: 24.811432, y: -41.837708}
+        - {x: 49.658997, y: -20.423798}
+        - {x: 53.520447, y: 18.228271}
+        - {x: 62.5, y: 27.91394}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dwarf_New_Crouch_2
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 332
+        width: 125
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 51.5, y: 44.0795}
+        - {x: -12.728638, y: 50.5}
+        - {x: -45.990143, y: 25.996704}
+        - {x: -47.08249, y: -29.824036}
+        - {x: -59.786896, y: -50.690094}
+        - {x: -62.5, y: -74.5}
+        - {x: -33.31366, y: -68.996765}
+        - {x: 7.066345, y: -72.66556}
+        - {x: 33.269287, y: -66.84778}
+        - {x: 23.562195, y: -44.146362}
+        - {x: 43.74182, y: -45.2648}
+        - {x: 57.91394, y: -6.251648}
+        - {x: 61.582764, y: 35.162292}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dwarf_New_Crouch_3
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 329
+        width: 128
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -24.241821, y: 52.665558}
+        - {x: -53.910645, y: 29.1557}
+        - {x: -57.404053, y: -14.825928}
+        - {x: -40.128357, y: -26.230682}
+        - {x: -62.00708, y: -49.657104}
+        - {x: -64, y: -74.5}
+        - {x: -8.577454, y: -66.245056}
+        - {x: 5.0630493, y: -74.5}
+        - {x: 29.06311, y: -54.85089}
+        - {x: 40.078796, y: -36.46341}
+        - {x: 55.073914, y: 16.28955}
+        - {x: 60.248352, y: 35.245087}
+        - {x: 24.917175, y: 50.831116}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dwarf_New_Crouch_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 93
+        width: 125
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 62.5, y: 33.5}
+        - {x: 51.5, y: 44.5}
+        - {x: 30.5, y: 55.5}
+        - {x: -4.0992203, y: 58.41722}
+        - {x: -40.09265, y: 38.23848}
+        - {x: -53.327854, y: 20.735199}
+        - {x: -51.70557, y: -8.803787}
+        - {x: -62.5, y: -67.162285}
+        - {x: -38.610054, y: -73.83014}
+        - {x: -11.099228, y: -64.41064}
+        - {x: 12.824554, y: -69.00329}
+        - {x: 26.900772, y: -56.685295}
+        - {x: 44.276505, y: -30.905685}
+        - {x: 62.5, y: 26.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dwarf_New_Crouch_5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 91
+        width: 125
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8.576202, y: 50.5}
+        - {x: -41.91391, y: 28.334442}
+        - {x: -42.162292, y: 11.678726}
+        - {x: -48.5, y: -13.5}
+        - {x: -35.748352, y: -25.168854}
+        - {x: -62.5, y: -47.5}
+        - {x: -62.5, y: -73.5}
+        - {x: -57.5, y: -74.5}
+        - {x: -33.767456, y: -69.91392}
+        - {x: 31.658997, y: -71.74835}
+        - {x: 24.894196, y: -45.92708}
+        - {x: 48.029236, y: -43.291878}
+        - {x: 62.5, y: 36.41063}
+        - {x: 36.5, y: 44.99672}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dwarf_New_Crouch_6
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 95
+        width: 125
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 51.5, y: 45.410645}
+        - {x: -15.079498, y: 55.5}
+        - {x: -56.0795, y: 28.493423}
+        - {x: -58.740784, y: -7.1055603}
+        - {x: -39.87494, y: -26.383087}
+        - {x: -60.880646, y: -47.981544}
+        - {x: -62.5, y: -73.5}
+        - {x: -8.390259, y: -63.410637}
+        - {x: 5.9073486, y: -71.665565}
+        - {x: 26.397522, y: -59.016434}
+        - {x: 24.894226, y: -40.685303}
+        - {x: 47.30359, y: -23.32785}
+        - {x: 62.5, y: 38.831146}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dwarf_New_Crouch_7
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 100
+        width: 125
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 62.5, y: 35.5}
+        - {x: 53.5, y: 49.5}
+        - {x: 19.5, y: 50.5}
+        - {x: -7.5, y: 50.5}
+        - {x: -42.658997, y: 28.5}
+        - {x: -34.98352, y: 11.423782}
+        - {x: -50.45752, y: -11.568451}
+        - {x: -33.609436, y: -23.564117}
+        - {x: -61.065674, y: -50.14643}
+        - {x: -60.66559, y: -72.665565}
+        - {x: -36.180603, y: -70.45623}
+        - {x: -23.007812, y: -73.33644}
+        - {x: -4.8910522, y: -69.027374}
+        - {x: 30.91388, y: -69.913925}
+        - {x: 22.066345, y: -44.99671}
+        - {x: 42.90515, y: -44.79976}
+        - {x: 56.079468, y: -11.168854}
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
