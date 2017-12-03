@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - fireBall
   - mineral
+  - Trap
   layers:
   - Default
   - TransparentFX

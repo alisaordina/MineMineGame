@@ -31,14 +31,16 @@ public class Trap : MonoBehaviour
 	[SerializeField] HUDController gameCtl;
 
 
+
+
 	//On collision function to detect the other collider2D
 	void OnTriggerEnter2D(Collider2D other)
 	{
-
+		
 		//Check if the ame object's tag is equals ti the Player tag
 		if (other.gameObject.tag.Equals ("Player")) 
 		{
-
+			
 			//If the tag is equals to the player tag then access the tag's game object's
 			//DwarfController script
 			DwarfController Dc = other.gameObject.GetComponent<DwarfController> ();
@@ -49,11 +51,15 @@ public class Trap : MonoBehaviour
 			if (Dc != null) 
 			{
 
+				//invoke form Dwarf's controller script Death method/function
+				Dc.Death ();
+
 				//Create/intantiate an explosion onto the trap's game object's position 
 				Instantiate (explosion).GetComponent<Transform> ().position = this.gameObject.GetComponent<Transform> ().position;
 
-				//invoke form Dwarf's controller script Death method/function
-				Dc.Death ();
+
+
+
 
 				//Invoke function DeadGameOver() method from the HUDCONtrollerscript that is attached to canvas.
 				gameCtl.GetComponent<HUDController> ().DeadGameOver ();

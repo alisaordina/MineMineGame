@@ -60,7 +60,7 @@ public class HUDController : MonoBehaviour
 	[SerializeField] Button resetBtn;
 
 	//declaring the maximum 30 seconds time when the countdown begins
-	[SerializeField] private int CountDown = 30;
+	[SerializeField] private int CountDown = 500;
 
 	//setting up the boolean flag Countup.
 	[SerializeField] private bool CountUp = false;
@@ -152,8 +152,10 @@ public class HUDController : MonoBehaviour
 		//First setting up the score label to 0 value.
 		Player.Instance.Score = 0;
 
-		//First setting up the life label to a value of 3.
+		//First setting up the life label to a value of 50.
 		Player.Instance.Life = 50;
+
+
 
 		//First setting up the high score label to a value of 0.
 		//Player.Instance.HighScore = 0;
@@ -446,6 +448,7 @@ public class HUDController : MonoBehaviour
 		//So, here the Player class is introduced to the HUDController class.
 		Player.Instance.gameCtl = this;
 
+
 		//Here the set up of the Audio Source. 
 		//This Audio Source Component is accessed from this specific game object
 		//which the script is attached to Canvas game object in the scene.
@@ -514,6 +517,12 @@ public class HUDController : MonoBehaviour
 		if (CountUp && isgameOvr) 
 		{
 			pause (t);
+
+			string minutes = ((int)Player.Instance.LowestTimeTwo / 60).ToString ();
+			string seconds = (Player.Instance.LowestTimeTwo % 60).ToString ("f2");
+
+			lowestTimeLabel.text = "Best Time: " +  minutes + ":" + seconds;
+
 			//if it is true and the player has won then update
 			//the lowest time variable to the t variable
 			//Player.Instance.LowestTime = t;
@@ -521,7 +530,22 @@ public class HUDController : MonoBehaviour
 			//reset hasWon variable
 			Player.Instance.HasWon = false;
 		}
-			//check to see if the player has won
+		if (!CountUp && isgameOvr) 
+		{
+			pause (t);
+
+			string minutes = ((int)Player.Instance.LowestTimeTwo / 60).ToString ();
+			string seconds = (Player.Instance.LowestTimeTwo % 60).ToString ("f2");
+
+			lowestTimeLabel.text = "Best Time: " +  minutes + ":" + seconds;
+			//if it is true and the player has won then update
+			//the lowest time variable to the t variable
+			//Player.Instance.LowestTime = t;
+			//Player.Instance.YourTime = t;
+			//reset hasWon variable
+			Player.Instance.HasWon = false;
+		}
+		//check to see if the player has won
 			if (CountUp && Player.Instance.HasWon) 
 			{
 				pause (t);
@@ -576,9 +600,10 @@ public class HUDController : MonoBehaviour
 			//update timmer label in UI
 				timerLabel.text = minutes + ":" + seconds;
 			}
+
 		if (!CountUp && t <= 0) 
 		{
-
+			pause (t);
 			DeadGameOver ();
 			//Parse the string into a more friendly display string that is more readle to the user
 			//into a more disirable view.
@@ -594,10 +619,10 @@ public class HUDController : MonoBehaviour
 
 			timerLabel.text = minutes + ":" + seconds;*/
 		}
-		if (CountUp && t >= 30) 
+		if (CountUp && t >= 500) 
 		{
 			
-			//pause (t);
+			pause (t);
 
 			DeadGameOver ();
 			//Parse the string into a more friendly display string that is more readle to the user

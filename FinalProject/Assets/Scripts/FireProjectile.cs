@@ -60,13 +60,18 @@ public class FireProjectile : MonoBehaviour
 
 
 	// Use this for initialization
+	private AudioSource _fireSound;
+
+	// Use this for initialization
 	void Start () 
 	{
+		_fireSound = gameObject.GetComponent<AudioSource> ();
 
+		_fireSound.Play ();
 		//setting up the initial position
 		_initPosition = gameObject.transform.position;
 
-
+	
 		//Here the set up of the Audio Source component. 
 		//This Audio Source Component is accessed from this specific game object
 		//which the script is attached to, the fire game object in the scene.
@@ -186,4 +191,5 @@ public class FireProjectile : MonoBehaviour
 			DestroyObject (this.gameObject);
 		}*/
 	}
+
 }

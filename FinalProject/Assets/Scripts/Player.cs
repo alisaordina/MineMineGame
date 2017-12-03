@@ -122,6 +122,8 @@ public class Player
 	//setting up the boolean has hasWon variable
 	private bool hasWon = false;
 
+
+
 	//Player's public property
 	//Using the get (read) and set property
 	//to update the HasMineral variable
@@ -130,6 +132,7 @@ public class Player
 		get{ return _hasMineral; }
 		set{ _hasMineral = value; }
 	}
+
 
 	//Player's public property
 	//Using the get (read) and set property

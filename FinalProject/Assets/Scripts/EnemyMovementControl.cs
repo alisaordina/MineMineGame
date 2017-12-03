@@ -58,11 +58,21 @@ public class EnemyMovementControl : MonoBehaviour
 	//private Animator _animator;
 	//[SerializeField] private float force= 1f;
 
+	private AudioSource[] _audioSources;
+
+	private AudioSource _enemyExplosionSound;
+	private AudioSource _enemySound;
+
+	private bool isDead = false;
 
 	// Use this for initialization
 	void Start () 
 	{
 
+		//_enemyExplosionSound = gameObject.GetComponent<AudioSource> ();
+		this._audioSources = gameObject.GetComponents<AudioSource> ();
+		this._enemyExplosionSound = this._audioSources [0];
+		this._enemySound = this._audioSources [1];
 		//Here the set up of the Rigidbody2D component. 
 		//This Rigidbody2D Component is accessed from this specific game object
 		//which the script is attached to the enemy game object in the scene.
@@ -182,6 +192,14 @@ public class EnemyMovementControl : MonoBehaviour
 		//update the enemy gameobject's speed
 		//set it back to the enemy game object's body.
 		_rigidBody.velocity = vel;
+
+		if (isDead) {
+			if (this._enemyExplosionSound.isPlaying) {
+
+			} else {
+				Destroy (this.gameObject);
+			}
+		}
 	}
 
 	//This is the function that would detect the collision with
@@ -193,22 +211,35 @@ public class EnemyMovementControl : MonoBehaviour
 	public void OnTriggerEnter2D(Collider2D other)
 	{
 
+		if (other.gameObject.tag.Equals ("Player")) {
+
+			if (this._enemySound!= null) {
+				this._enemySound.Play ();
+			}
+
+
+		}
+
 		//if the collisionhappenedwith the fire game object and its tag is equals to the fireball tag
-		if(other.gameObject.tag.Equals("fireBall"))
-		{
+		if (other.gameObject.tag.Equals ("fireBall")) {
+
+			if (this._enemyExplosionSound != null) {
+				this._enemyExplosionSound.Play ();
+			}
 			//if this is true and the collision happened with the fireball tag
 			//then instantiate/create the enemyexplosion game object on to the scene where 
 			//on to the fireball game object's position thatis located in the scene
-			Instantiate(enemyExplosion).GetComponent<Transform>().position =
+			Instantiate (enemyExplosion).GetComponent<Transform> ().position =
 				other.gameObject.GetComponent<Transform> ().position;
+
 
 			//once the collision has happened and the creation of the enemy explosion was created
 			//destroy/remove the fire ball game object from the scene
-			Destroy (other.gameObject);
+			//Destroy (other.gameObject);
 
 			//once the collision has happened and the fire ball game object was removed fromthe scene then
 			//destroy/remove the enemy game object from the scene
-			Destroy (this.gameObject);
+			isDead= true;
 		}
 	}
 }

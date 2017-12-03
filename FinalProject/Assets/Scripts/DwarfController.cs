@@ -192,6 +192,7 @@ public class DwarfController : MonoBehaviour
 				//order to trigger the Dwarf's attack animation.
 				_animator.SetBool ("Fire", true);
 
+
 				//First the Dwarf game object's tranform gets accessed to get
 				//the x and y coordinates of the Dwarf's position point.
 				//Storing the current Dwarf's position in Vector2 positionOfDwarf variable 

@@ -28,11 +28,16 @@ public class DwarfCollision : MonoBehaviour
 	[SerializeField] GameObject goldPiece;
 
 	//public bool hasJewel = false;
+	private AudioSource[] _audioSources;
+	private AudioSource _scoreSound;
+	private AudioSource _explosionSound;
+	private AudioSource _mineralSound;
 
 
 	//Declaire private variable
 	//This variable is assigned to a designated AudioSource variable
-	private AudioSource _scoreSound;
+
+
 
 
 
@@ -47,7 +52,13 @@ public class DwarfCollision : MonoBehaviour
 		//access the Audio Source.
 		//This is set up, so the specific methods could be applied to control 
 		//this game object's Audio Source and invoke Play method when appropriate.
-		_scoreSound = gameObject.GetComponent<AudioSource> ();
+		this._audioSources = gameObject.GetComponents<AudioSource>();
+
+		this._scoreSound = this._audioSources [0];
+
+
+		this._explosionSound = this._audioSources [1];
+		this._mineralSound = this._audioSources [2];
 
 	}
 
@@ -86,11 +97,11 @@ public class DwarfCollision : MonoBehaviour
 			//If the Dwarf game object's Audio Source is assigned
 			//and does not equal to null,
 			//then this function gets invoked with its statement.
-			if(_scoreSound != null)
+			if(_scoreSound!= null)
 			{
 				//If the Dwarf has Audio Source component is set up then 
 				//play its attached audio clip
-				_scoreSound.Play ();
+				_scoreSound.Play();
 
 			}
 			//When the Dwarf has intercepted with the
@@ -123,13 +134,20 @@ public class DwarfCollision : MonoBehaviour
 			//If the Dwarf game object's Audio Source is assigned
 			//and does not equal to null,
 			//then this function gets invoked with its statement.
-			if(_scoreSound != null)
+			if(_mineralSound!= null)
 			{
 				//If the Dwarf has Audio Source component is set up then 
 				//play its attached audio clip
-				_scoreSound.Play ();
+				_mineralSound.Play();
 
 			}
+			/*if(_mineralSound!= null)
+			{
+				//If the Dwarf has Audio Source component is set up then 
+				//play its attached audio clip
+				_mineralSound.Play ();
+
+			}*/
 			//When the Dwarf has intercepted with the
 			//mineral game object. The Dwarf's points 
 			//adds 500 points
@@ -139,6 +157,17 @@ public class DwarfCollision : MonoBehaviour
 			//used to update the score counter and increase the value
 			//by 500 points.
 			Player.Instance.Score += 500;
+
+		}
+		if (other.gameObject.tag.Equals ("Trap")) {
+			
+			if(_explosionSound!=null)
+			{
+				//If the Dwarf has Audio Source component is set up then 
+				//play its attached audio clip
+				_explosionSound.Play();
+
+			}
 
 		}
 
