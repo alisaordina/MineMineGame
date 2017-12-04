@@ -334,7 +334,7 @@ public class Player
 				//This will call the HUDController's
 				//method called gameOver method in order to  
 				//display the specific UI onto the scene
-				gameCtl.gameOver ();
+				gameCtl.DeadGameOver();
 			} 
 			else 
 			{

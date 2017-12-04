@@ -62,7 +62,7 @@ public class Trap : MonoBehaviour
 
 
 				//Invoke function DeadGameOver() method from the HUDCONtrollerscript that is attached to canvas.
-				gameCtl.GetComponent<HUDController> ().DeadGameOver ();
+				gameCtl.GetComponent<HUDController> ().gameOver();
 
 
 

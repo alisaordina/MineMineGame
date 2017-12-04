@@ -193,10 +193,13 @@ public class EnemyMovementControl : MonoBehaviour
 		//set it back to the enemy game object's body.
 		_rigidBody.velocity = vel;
 
-		if (isDead) {
+		if (isDead) 
+		{
 			if (this._enemyExplosionSound.isPlaying) {
 
-			} else {
+			} 
+			else 
+			{
 				Destroy (this.gameObject);
 			}
 		}
@@ -216,6 +219,7 @@ public class EnemyMovementControl : MonoBehaviour
 			if (this._enemySound!= null) {
 				this._enemySound.Play ();
 			}
+
 
 
 		}

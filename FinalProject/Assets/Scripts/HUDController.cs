@@ -60,7 +60,7 @@ public class HUDController : MonoBehaviour
 	[SerializeField] Button resetBtn;
 
 	//declaring the maximum 30 seconds time when the countdown begins
-	[SerializeField] private int CountDown = 500;
+	[SerializeField] private int CountDown = 200;
 
 	//setting up the boolean flag Countup.
 	[SerializeField] private bool CountUp = false;
@@ -502,7 +502,7 @@ public class HUDController : MonoBehaviour
 		if (!CountUp) 
 		{
 			//if it is true and it is not count up time
-			//then subtract from start time 30 tothe current going time
+			//then subtract from start time 30 to the current going time
 			//and update the t variable for UI display purposes
 			t = startTime - Time.time;
 		} 
@@ -529,6 +529,7 @@ public class HUDController : MonoBehaviour
 			//Player.Instance.YourTime = t;
 			//reset hasWon variable
 			Player.Instance.HasWon = false;
+			isgameOvr = false;
 		}
 		if (!CountUp && isgameOvr) 
 		{
@@ -544,6 +545,7 @@ public class HUDController : MonoBehaviour
 			//Player.Instance.YourTime = t;
 			//reset hasWon variable
 			Player.Instance.HasWon = false;
+			isgameOvr = false;
 		}
 		//check to see if the player has won
 			if (CountUp && Player.Instance.HasWon) 
@@ -603,7 +605,7 @@ public class HUDController : MonoBehaviour
 
 		if (!CountUp && t <= 0) 
 		{
-			pause (t);
+			//pause (t);
 			DeadGameOver ();
 			//Parse the string into a more friendly display string that is more readle to the user
 			//into a more disirable view.
@@ -619,10 +621,10 @@ public class HUDController : MonoBehaviour
 
 			timerLabel.text = minutes + ":" + seconds;*/
 		}
-		if (CountUp && t >= 500) 
+		if (CountUp && t >= 200) 
 		{
 			
-			pause (t);
+			//pause (t);
 
 			DeadGameOver ();
 			//Parse the string into a more friendly display string that is more readle to the user
@@ -709,6 +711,7 @@ public class HUDController : MonoBehaviour
 			startTime += CountDown;
 		}
 	}
+
 }
 
 

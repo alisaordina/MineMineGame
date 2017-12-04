@@ -19,7 +19,7 @@ public class LevelTwoHUDController : MonoBehaviour
 		string minutes = ((int)t / 60).ToString ();
 		string seconds = (t % 60).ToString ("f2");
 
-		lowestLabel.text = "Time To Beat: " +minutes+ ":" +seconds;
+		lowestLabel.text = "Lowest Time: " +minutes+ ":" +seconds;
 
 		t = Player.Instance.YourTime; 
 
