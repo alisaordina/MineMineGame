@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
+ * The EnemyExplosion.cs script
  * Alisa Ordina
  * id: 100967526
 * November 17, 2017

@@ -8,9 +8,9 @@ using UnityEngine;
  * id: 100967526
  * November 18, 2017
  * 
- * This script component is attached to Door game object in the scene.
- * This following code allows the Dwarf game object when it has completed the game's objective
- * which is retrieve the rare mineral andbefore to transition the sceen happenes thos door opens to the next level. 
+ * This script component is attached to the Door platform game object in the scene.
+ * This following code applied to the door platform game object. When the Dwarf has completed the game's objective
+ * which is retrieve the rare mineral and before to transition to the next scene the door opens to the next level. 
  * This is done through the couroutine maner.
  * 
  * 
@@ -21,7 +21,7 @@ public class DoorController : MonoBehaviour
 	//Declaration of the public close delay variable that could be edited in Unity's Inspector 
 	//in order to define the the delay in seconds which would be appropriate to apply for this Door
 	//game object in the scene.
-	[SerializeField] private float closeDelay = 2f;
+	//[SerializeField] private float closeDelay = 2f;
 
 	//[SerializeField] HUDController gameCtl;
 
@@ -40,21 +40,24 @@ public class DoorController : MonoBehaviour
 	//Dwarf's game object's collider2D 
 	public void OnTriggerEnter2D(Collider2D other)
 	{
-		//Check to see if the game'sobjection has been completed 
+		//Check to see if the game's objection has been fulfilled/completed 
 		//Check to see if the Dwarf character has a mineral
 		//which is boolean to see if its true,to see if
-		//Dwarf has aquired the rare mineral.
+		//Dwarf has picked up the rare mineral.
 		if(Player.Instance.HasMineral)
 		{
 		//Open ();
 
 		//StartCoroutine ("Open");
 
+		//Checks to see if the door flag is equals to false, which checks if the door has been openedif the door opened has been triggered.
+		//if the door is nor open then trigger this condition
 		if (!isOpen) 
 		{
 			//call the couroutine open function
 			StartCoroutine ("Open");
-				//reset the isOpen boolean to true
+
+			//reset the isOpen boolean flag to true
 			isOpen = true;
 		}
 		}
@@ -70,11 +73,15 @@ public class DoorController : MonoBehaviour
 		
 	}
 
+	//function which triggers to open the door
 	private IEnumerator Open()
 	{
-
+		//This condition that checks, to see if the door is not opened
+		//if the door is not open then trigger this function 
 		if (!isOpen) 
 		{
+			//reset the flag boolean isOpen to true
+			//To indicate that the door has been open
 			isOpen = true;
 
 			//open the door, apply tranformation with the delay
@@ -111,8 +118,8 @@ public class DoorController : MonoBehaviour
 	//courutine close
 	private IEnumerator Close()
 	{
-
-		isOpen = true;
+		//reset the boolean 
+		//isOpen = true;
 
 
 		//open the door, apply tranformation with the delay
@@ -125,7 +132,7 @@ public class DoorController : MonoBehaviour
 			yield return new WaitForSeconds (0.1f);
 		}
 		//reset the boolean value isOpen to false
-		//this is in order to start coroutine is open \gain wen appropriate.
+		//this is in order to start coroutine is open again when appropriate.
 		isOpen = false;
 
 		/*Vector2 pos = gameObject.transform.position;

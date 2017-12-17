@@ -16,7 +16,7 @@ using UnityEngine;
  * could still exist and cannot be intantiated again.
  * This class will take some resposibility of the HUDController
  * because of this class's capabilities. This class could be
- * carried over to other levels if it was possible in this game. 
+ * carried over to other levels. 
  * So, this class is implemented in a way that cannot be instantiated 
  * any where else just inside this class. This is done by private constructor.
  * 
@@ -32,6 +32,7 @@ public class Player
 	//any where else just inside this class. This is done by private constructor.
 	static public Player Instance
 	{
+		//read only
 		get 
 		{
 			//This condition checks if the Player class
@@ -40,13 +41,15 @@ public class Player
 			{
 				//construct a new Player object with
 				//its default contructor
-				//GameObject.DontDestroyOnLoad(gameObject);
 				_instance = new Player ();
 			}
+
+			//it the Player class does exists then,
 			//return the Player's class intance
 			return _instance;
 		}
 	}
+
 	//setting up a static contant variable that stored in key and cannot be changed;
 	private const string key = "HIGH_SCORE";
 
@@ -65,26 +68,26 @@ public class Player
 		{
 			//Then stored this value in PlayerPrefs and store that value in the high 
 			//score variable. Basically, the Player prefs is used to store like a persitant
-			//value. This means when the game is reset/started to execute all over again that
+			//storage variable. This means when the game is reset/started again and execute again all over that
 			//value is still saved as a high score value and not get to reset back to zero.
 			_highScore = PlayerPrefs.GetInt (key);
 		}
 		if (PlayerPrefs.HasKey (tkey1)) 
 		{
-			//Then stored this value in PlayerPrefs and store that value in the high 
-			//score variable. Basically, the Player prefs is used to store like a persitant
-			//value. This means when the game is reset/started to execute all over again that
-			//value is still saved as a high score value and not get to reset back to zero.
+			//Then stored this value in PlayerPrefs and store that value in the lowest 
+			//time variable. Basically, the Player prefs is used to store like a persitant
+			//storage variable. This means when the game is reset/started again and execute again all over that
+			//value is still saved as a lowest time level 1, as _lowestTimelvl1 value and not get to reset back to zero.
 			_lowestTimelvl1 = PlayerPrefs.GetFloat (tkey1);
 
 
 		}
 		if (PlayerPrefs.HasKey (tkey2)) 
 		{
-			//Then stored this value in PlayerPrefs and store that value in the high 
-			//score variable. Basically, the Player prefs is used to store like a persitant
-			//value. This means when the game is reset/started to execute all over again that
-			//value is still saved as a high score value and not get to reset back to zero.
+			//Then stored this value in PlayerPrefs and store that value in the lowest 
+			//time variable. Basically, the Player prefs is used to store like a persitant
+			//storage variable. This means when the game is reset/started again and execute again all over that
+			//value is still saved as a lowest time level 2, as _lowestTimelvl2 value and not get to reset back to zero.
 			_lowestTimelvl2 = PlayerPrefs.GetFloat (tkey2);
 		}
 	}
@@ -96,30 +99,31 @@ public class Player
 	//Player and the HUDController class.
 	public HUDController gameCtl;
 
-	//setting up the score variable
+	//private variable, setting up of the the score variable
 	private int _score;
 
-	//setting up the life variable
+	//private variable, setting up the life variable
 	private int _life;
 
-	//setting up the high score variable
+	//private variable, setting up the high score variable
 	private int _highScore = 0;
 
-	//setting up the boolean has Mineral variable
+	//private variable, setting up the boolean has Mineral variable
 	private bool _hasMineral;
 
-	//setting up the lowest Time for level 1 variable
-	private float _lowestTimelvl1 = 30;
+	//private variable, setting up the lowest Time for level 1 variable
+	private float _lowestTimelvl1 = 120;
 
-	//setting up the lowest Time for level 2 variable
-	private float _lowestTimelvl2 = 30;
+	//private variable, setting up the lowest Time for level 2 variable
+	private float _lowestTimelvl2 = 120;
 
-	//setting up the timmer variable
+	//private variable, setting up the timmer variable
 	private float _timmer;
 
+	//private variable, setting up the your time variable
 	private float _yourTime;
 
-	//setting up the boolean has hasWon variable
+	//private variable, setting up the boolean has hasWon variable
 	private bool hasWon = false;
 
 
@@ -153,14 +157,16 @@ public class Player
 		{
 			return _score;
 		}
-		//setting the score to the new value
+
+		//Setting the score to the new value
 		set
 		{
 			_score = value;
-			//update high score points as well
+
+			//Update high score points as well
 			HighScore = _score;
 
-			//scoreLabel.text = "Score: " + _score;
+			//ScoreLabel.text = "Score: " + _score;
 			//This will call the HUDController's
 			//method called update UI in order to update 
 			//the score label
@@ -174,27 +180,22 @@ public class Player
 	//to update the high score variable
 	public int HighScore
 	{
-		//reading the high score
+		//Reading the high score
 		get 
 		{
 			return _highScore;
 		}
-		//setting the high score to the new value
+		//Setting the high score to the new value
 		set
 		{
-			//only set of the current value
+			//Only set of the current value
 			//is greater than the current score
 			if (value > _highScore)
 			{
 				_highScore = value;
 				PlayerPrefs.SetInt (key, _highScore);
 			}
-
-			//highScoreLabel.text = "High Score: " + _highscore;
-			//This will call the HUDController's
-			//method called update UI in order to update 
-			//the high score label
-			//gameCtl.updateUI();
+				
 		}
 	}
 
@@ -203,126 +204,173 @@ public class Player
 	//to update the Timmer variable
 	public float Timmer
 	{
-		//reading the timmer
+		//Reading the timmer
 		get 
 		{
 			return _timmer;
 		}
-		//setting the timmer to the new value
+
+		//Setting the timmer to the new value
 		set
 		{
-			//paused t value
 
-
+			//Setting up the timmer
+			//in order to write to the timmer variable
 			_timmer = value;
+
+			//used previously
+			//-----------------------------------------
 			//update Lowest Time points as well
-			//LowestTime = _timmer;
+			//_lowestTimelvl1 = _timmer;
+			//_lowestTimelvl2 = _timmer;
 
 			//timmerLabel.text = "Timmer: " + _timmer;
 			//This will call the HUDController's
 			//method called update UI in order to update 
 			//the timmer label
 			//gameCtl.EndUI();
-		}
-	}
-	public float YourTime
-	{
-		//reading the timmer
-		get 
-		{
-			return _yourTime;
-		}
-		//setting the timmer to the new value
-		set
-		{
-			//paused t value
-
-
-			_yourTime = value;
-			//update Lowest Time points as well
+			//-----------------------------------------
 
 		}
 	}
 
 	//Player's public property
 	//Using the get (read) and set property
-	//to update the Lowest Time variable
+	//to update the YourTime variable
+	public float YourTime
+	{
+		//Reading the timmer
+		get 
+		{
+			return _yourTime;
+		}
+		//Setting the timmer to the new value
+		set
+		{
+
+			//Setting up the yourTime
+			//in order to write to the yourTime variable
+			_yourTime = value;
+
+
+		}
+	}
+
+	//Player's public property
+	//Using the get (read) and set property
+	//to update the Lowest Time variable in level one only
 	public float LowestTime
 	{
-		//reading the Lowest Time
+		//Reading the Lowest Time
 		get 
 		{
 			return _lowestTimelvl1;
 		}
-		//setting the Lowest Time to the new value
+
+		//Setting the Lowest Time to the new value
 		set
 		{
 
+			//If the lowest time for level one does not exist
+			//then set it up as a default value as 120 seconds as two minutes.
+			if (_lowestTimelvl1 == 0) 
+			{
 
-			if (_lowestTimelvl1 == 0) {
-				
-				_lowestTimelvl1 = 5000;
+				//Set it up as its initial/default value as 120 seconds as two minutes.
+				_lowestTimelvl1 = 120;
 			
 			}
-			//only set of the current value
-			//is greater than the current Lowest Time
+
+			//Only set of the current lowestTimelvl1 value
+			//if it is less than previous value than the current Lowest Time
+			//in the level one only
 			if (value < _lowestTimelvl1)
 			{
+				
+				//If it is true the the next lowest time value is less than
+				//the previous lowest time value then set it up as its new 
+				//lowest time value in level one only
 				_lowestTimelvl1 = value;
 
+				//Then store it in the memory as a persitant data for this level one in this game.
 				PlayerPrefs.SetFloat (tkey1, _lowestTimelvl1);
-				//PlayerPrefs.SetFloat (tkey1, _lowestTimelvl1);
-				//PlayerPrefs.Save ();
+
 			}
 
-
-
-
-
-			//LowestTimeLabel.text = "Lowest Time: " + _LowestTime;
-			//This will call the HUDController's
-			//method called end UI in order to update 
-			//the Lowest Time label
-			//gameCtl.endUI();
 		}
 	}
+
+	//Player's public property
+	//Using the get (read) and set property
+	//to update the Lowest Time variable in level two only
 	public float LowestTimeTwo
 	{
-		//reading the Lowest Time
+		//Reading the Lowest Time in level 2
 		get 
 		{
 			return _lowestTimelvl2;
 		}
-		//setting the Lowest Time to the new value
+
+		//Setting the Lowest Time to the new value
 		set
 		{
-			//only set of the current value
-			//is greater than the current Lowest Time
-			if (value < _lowestTimelvl2)
+			
+			//If the lowest time for level two does not exist
+			//then set it up as a default value as 120 seconds as two minutes.
+			if (_lowestTimelvl2 == 0) 
 			{
-				_lowestTimelvl2 = value;
-				PlayerPrefs.SetFloat (tkey2, _lowestTimelvl2);
+
+				//Set it up as its initial/default value as 120 seconds as two minutes.
+				_lowestTimelvl2 = 120;
+
 			}
 
-			//LowestTimeLabel.text = "Lowest Time: " + _LowestTime;
-			//This will call the HUDController's
-			//method called end UI in order to update 
-			//the Lowest Time label
-			//gameCtl.endUI();
+			//Only set of the current lowestTimelvl2 value
+			//if it is less than previous value than the current Lowest Time
+			//in the level two only
+			if (value < _lowestTimelvl2)
+			{
+
+				//If it is true the the next lowest time value is less than
+				//the previous lowest time value then set it up as its new 
+				//lowest time value in level two only
+				_lowestTimelvl2 = value;
+
+				//Then store it in the memory as a persitant data for this level
+				//two lowest timmer variable value in this game.
+				PlayerPrefs.SetFloat (tkey2, _lowestTimelvl2);
+			}
+				
 		}
 	}
+
+	//used previously
+	//-----------------------------------------
+	/*public void resetLvl1Score()
+	{
+	
+		PlayerPrefs.SetFloat (tkey1, 0);
+	}
+
+	public void resetLvl2Score()
+	{
+	
+		PlayerPrefs.SetFloat (tkey2, 9999);
+	}*/
+	//-----------------------------------------
+
 
 	//Player's public property
 	//Using the get (read) and set property
 	//to update the life variable
 	public int Life
 	{
-		//reading the life counter variable
+		//Reading the life counter variable
 		get 
 		{
 			return _life;
 		}
-		//setting up a new value for the life variable
+		//Setting up a new value for the life variable
 		set
 		{
 			_life = value;

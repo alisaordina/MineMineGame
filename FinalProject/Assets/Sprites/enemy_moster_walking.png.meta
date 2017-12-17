@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: 0676f5973da68584aadc36f7e22f6ced
+timeCreated: 1512972228
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: enemy_moster_walking_0
+    21300002: enemy_moster_walking_1
+    21300004: enemy_moster_walking_2
+    21300006: enemy_moster_walking_3
+    21300008: enemy_moster_walking_4
+    21300010: enemy_moster_walking_5
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemy_moster_walking_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 188
+        width: 144
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 29, y: 61.5}
+        - {x: -10, y: 61.5}
+        - {x: -26, y: 55.5}
+        - {x: -72, y: 14.5}
+        - {x: -72, y: -17.5}
+        - {x: -28.157341, y: -43.25441}
+        - {x: -18.047249, y: -64.683624}
+        - {x: 1.618103, y: -50.152695}
+        - {x: 30.25843, y: -66.5}
+        - {x: 61, y: -40.5}
+        - {x: 72, y: 21.5}
+        - {x: 72, y: 44.5}
+      - - {x: 30, y: -42.5}
+        - {x: 30, y: -41.5}
+        - {x: 34, y: -44.5}
+        - {x: 33, y: -43.5}
+      - - {x: -10, y: -31.5}
+        - {x: -12, y: -33.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemy_moster_walking_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 186
+        width: 138
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1, y: 63.5}
+        - {x: -22, y: 51.5}
+        - {x: -25, y: 48.5}
+        - {x: -25, y: 47.5}
+        - {x: -36, y: 39.5}
+        - {x: -69, y: 4.5}
+        - {x: -67.81813, y: -12.302994}
+        - {x: -25.724426, y: -25.530563}
+        - {x: -10.270798, y: -50.867264}
+        - {x: -6.1763153, y: -66.5}
+        - {x: 3.4271545, y: -59.234543}
+        - {x: 5.516632, y: -66.5}
+        - {x: 30.430145, y: -66.5}
+        - {x: 28.434448, y: -59.527267}
+        - {x: 44.713318, y: -26.870071}
+        - {x: 55.372223, y: -19.51358}
+        - {x: 69, y: 54.5}
+        - {x: 15, y: 63.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemy_moster_walking_2
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 182
+        width: 138
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: 66.5}
+        - {x: -45, y: 50.5}
+        - {x: -69, y: 26.5}
+        - {x: -68.39453, y: -18.914505}
+        - {x: -11.523041, y: -28.549133}
+        - {x: -9.950653, y: -48.309418}
+        - {x: -3.9108582, y: -64.68364}
+        - {x: 24.047241, y: -66.5}
+        - {x: 22.193817, y: -52.994415}
+        - {x: 59.312714, y: -3.0509033}
+        - {x: 69, y: 52.5}
+        - {x: 30, y: 66.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemy_moster_walking_3
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 183
+        width: 135
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 10.458069, y: 66.5}
+        - {x: -27.921814, y: 62.86725}
+        - {x: -57.207275, y: 22.683624}
+        - {x: -67.5, y: -24.5}
+        - {x: -29.535706, y: -42.565826}
+        - {x: -22.656311, y: -61.050888}
+        - {x: 10.273254, y: -55.341934}
+        - {x: 23.418152, y: -66.5}
+        - {x: 39.2818, y: -51.894547}
+        - {x: 37.227173, y: -45.343643}
+        - {x: 53.503723, y: -11.350708}
+        - {x: 67.5, y: 38.887238}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemy_moster_walking_4
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 31
+        width: 137
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 68.5, y: 50.5}
+        - {x: 37.152695, y: 66.5}
+        - {x: -20.676315, y: 64.683624}
+        - {x: -68.5, y: 10.5}
+        - {x: -67.00545, y: -9.697617}
+        - {x: -35.492386, y: -20.298729}
+        - {x: -23.696281, y: -42.69095}
+        - {x: -16.996346, y: -62.26181}
+        - {x: -1.7727814, y: -51.363605}
+        - {x: 1.1212387, y: -66.5}
+        - {x: 26.07817, y: -62.73819}
+        - {x: 21.431213, y: -51.36883}
+        - {x: 29.439713, y: -17.800583}
+        - {x: 46.234528, y: -20.710915}
+        - {x: 68.5, y: 29.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemy_moster_walking_5
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 31
+        width: 140
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -34.74185, y: 53.78543}
+        - {x: -62.129074, y: 24.812706}
+        - {x: -69.98003, y: -6.9609756}
+        - {x: -28.223541, y: -22.44545}
+        - {x: -12.654007, y: -48.86919}
+        - {x: 1.5655518, y: -66.5}
+        - {x: 22.679993, y: -66.5}
+        - {x: 18.856293, y: -57.316364}
+        - {x: 36.05957, y: -47.10944}
+        - {x: 52.74228, y: -10.992447}
+        - {x: 63.339996, y: 22.5}
+        - {x: 70, y: 44.5}
+        - {x: 30, y: 66.5}
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

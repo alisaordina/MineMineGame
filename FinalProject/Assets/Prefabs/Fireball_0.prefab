@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d534b07e2cd08e4ba8f569af7eeb993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.2
   projectileDistance: 3
   enemy: {fileID: 1786430610448248, guid: 309a9e9398e3c564c8672ffb9c5d50c0, type: 2}
   enemyExposion: {fileID: 1594484226543964, guid: 278320f0912877e438d29d3c8af16d36,

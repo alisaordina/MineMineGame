@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * The FireProjectile.cs script
+ * The PlafromController.cs script
  * Alisa Ordina
  * id: 100967526
- * November 20, 2017
+ * November 25, 2017
  * 
- * This script component is attached to Platform game object in the prefab folder.
+ * This script component is attached to Platform game object.
  * This following code applies tranformation allowing the 
- * Platfrom object to move it vertically up and down direction.
+ * Platfrom object to move it vertically up and down directions.
 */
 
 public class PlafromController : MonoBehaviour 
@@ -26,17 +26,17 @@ public class PlafromController : MonoBehaviour
 	//This is the start y axis point that is a top 
 	//boundary point, where the platfrom starts moving down
 	//and stay within the bounds.
-	[SerializeField] private float startY;
+	[SerializeField] private float startY = 0;
 
 	//Declaire public variable that would be accessible to Unity Inspector.
 	//This variable is assigned to a designated end y axis point called LowY
 	//which is the bottom boundary point.
 	//This is the end y axis point, which is a bottom boundary
 	//where the platfrom resets and starts to move upwards.
-	[SerializeField] private float LowY;
+	[SerializeField] private float LowY = 0;
 
 	//the current point of the platform y point to track its coordinates in y axis.
-	[SerializeField] private float CurrentY;
+	[SerializeField] private float CurrentY = 0;
 
 	//This variable is from Unity the transform component 
 	//The Trasform is defined in Unity as position, rotation and scale
@@ -49,9 +49,9 @@ public class PlafromController : MonoBehaviour
 	private Vector2 _currentPosition;
 
 	//the boolean value isGoingdown set to true.
-	//later it is used to check the direction of the latform 
+	//later it is used to check the direction of the platform 
 	//in order to invoke appropriate function when it is appropriate.
-	private bool isGoingDown = true;
+	private bool _isGoingDown = true;
 
 
 
@@ -76,9 +76,6 @@ public class PlafromController : MonoBehaviour
 		_currentPosition = _transform.position;
 
 
-		//moveUp();
-
-
 	}
 
 	// Update is called once per frame
@@ -91,7 +88,7 @@ public class PlafromController : MonoBehaviour
 		//and track its x and y coordinates. This is where
 		//the boundaries are applied in order to reset this game object when it 
 		//has reached the ending x axis point and reset it to the starting x axis
-		//point in order for this star game object to stay in the camera view.
+		//point in order for this platform game object to stay within the boundaries.
 
 		//The _currentPosition will track the game object's position
 		//here from _transform the position is invoked to access the game 
@@ -102,29 +99,30 @@ public class PlafromController : MonoBehaviour
 
 
 
-		//To store the current update y point
+		//To store the current platform game object's position and update the current y point
 		CurrentY = _currentPosition.y;
 
 		//Check if the platfrom is moving downwards
-		if (isGoingDown) 
+		if (_isGoingDown) 
 		{
 			//If it is true,if the platfrom starts to go down.
 			//Then move the platfrom down by its indicated speed.
 			_currentPosition -= new Vector2 (0, speed);
+
 			//check to see if the platfrom has reached its boundary end y, LowY 
 			//point
 			if (_currentPosition.y < LowY) 
 			{
 				//If it is true and the platfrom has reached its boundary LowY
-				//point then resetthe flag isGoingDown to false.
-				isGoingDown = false;
+				//point then reset the flag isGoingDown to false.
+				_isGoingDown = false;
 			}
 
 		} 
 		else 
 		{
 			//If the platfrom is no longer going down then
-			//movethe platfrom upwards + bythe indicated speed value.
+			//move the platfrom upwards + by the indicated speed value.
 			_currentPosition += new Vector2 (0, speed);
 
 			//Check to see if the platfrom has reached its boundary upwards startY point
@@ -132,7 +130,7 @@ public class PlafromController : MonoBehaviour
 			{
 				//if it is true, and the platfrom has reached its startY boundary point
 				//then reset the flag boolean isGoingDown to true.
-				isGoingDown = true;
+				_isGoingDown = true;
 			}
 		}
 

@@ -10,7 +10,8 @@ using UnityEngine;
  * 
  * This script component is attached to Killzone game object in the scene.
  * This following code allows the Dwarf game object to return to its spawn point position,
- * its initial position if the Dwarf game object has collided with the specific killzone's boundary axis point.
+ * its initial position. This tranformation of the Dwarf's position is applied when
+ * the Dwarf game object has collided with the specific killzone's boundary axis point.
  * 
  * 
 */
@@ -18,11 +19,9 @@ using UnityEngine;
 public class KillZone : MonoBehaviour 
 {
 
-
-
 	//Declaire variable that would be accessible to Unity Inspector.
 	//This variable is assigned as a Tranform to a designated game object that is called spawnPoint
-	[SerializeField] Transform spawnPoint;
+	[SerializeField] Transform spawnPoint = null;
 
 	//Checks if the collision between the killzone's boundary was crossed by the 
 	//Dwarf's game object's collider2D 
@@ -30,8 +29,8 @@ public class KillZone : MonoBehaviour
 	{
 		
 		//If the Dwarf game object has crossed that killzone's boundary point 
-		//then reset the Dwarf's position to the spawn position point/initial position point.
-
+		//then reset the Dwarf's position to the spawn position point which is 
+		//defined as the Dwarf's initial position point.
 		other.gameObject.transform.position = spawnPoint.position;
 	}
 }
